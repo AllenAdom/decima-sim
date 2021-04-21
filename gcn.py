@@ -36,11 +36,11 @@ class GraphCNN(object):
         self.prep_weights, self.prep_bias = \
             self.init(self.input_dim, self.hid_dims, self.output_dim)
 
-        # f: x' -> e
+        # f: x' -> e 文章中的公式(1)
         self.proc_weights, self.proc_bias = \
             self.init(self.output_dim, self.hid_dims, self.output_dim)
 
-        # g: e -> e
+        # g: e -> e 文章中的公式(1)
         self.agg_weights, self.agg_bias = \
             self.init(self.output_dim, self.hid_dims, self.output_dim)
 
@@ -48,6 +48,7 @@ class GraphCNN(object):
         self.outputs = self.forward()
 
     def init(self, input_dim, hid_dims, output_dim):
+        # hid_dims: hidden dimensions throughout graph embedding (default: [16, 8])
         # Initialize the parameters
         # these weights may need to be re-used
         # e.g., we may want to propagate information multiple times

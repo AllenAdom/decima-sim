@@ -17,7 +17,7 @@ parser.add_argument('--job_folder', type=str, default='./spark_env/tpch/',
                     help='job folder path (default: ./spark_env/tpch/)')
 parser.add_argument('--result_folder', type=str, default='./results/',
                     help='Result folder path (default: ./results)')
-parser.add_argument('--model_folder', type=str, default='./models/',
+parser.add_argument('--model_folder', type=str, default='models/',
                     help='Model folder path (default: ./models)')
 
 # -- Environment --

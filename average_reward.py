@@ -9,6 +9,8 @@ class AveragePerStepReward(object):
 
     def add(self, reward, time):
         if self.count >= self.size:
+            # stale: 陈旧的
+            # 当reward的数量超过average_reward_storage_size时， 剔除旧的，即第一个reward
             stale_reward = self.reward_record.pop(0)
             stale_time = self.time_record.pop(0)
             self.reward_sum -= stale_reward

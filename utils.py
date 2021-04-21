@@ -59,8 +59,7 @@ def discount(x, gamma):
 
 
 def generate_coin_flips(p):
-    # generate coin flip until first head, with Pr(head) = p
-    # this follows a geometric distribution
+    # generate coin flip until first head, with Pr(head) = p，this follows a geometric distribution
     if p == 0:
         # infinite sequence
         return np.inf
@@ -153,7 +152,7 @@ def min_nonzero(x):
 def moving_average(x, N):
     return np.convolve(x, np.ones((N,)) / N, mode='valid')
 
-
+# 一个有序的不重复的元素集，一般的set()是无需的不重复的元素集，作者实现了一个有序的版本
 class OrderedSet(object):
     def __init__(self, contents=()):
         self.set = OrderedDict((c, None) for c in contents)
